@@ -12,4 +12,13 @@ class Produto:
         preco_descontado = preco*percentual/100
         preco_com_desconto = preco - preco_descontado
         self.preco =  preco_com_desconto
+    
+    def verificar_estoque_baixo(self,estoque):
+        estoque_baixo = False
+        if estoque < 5:
+            estoque_baixo = True
+    def __str__(self):
+        return f"Produto: {self.nome} | Preco: {self.preco}"
+    def __eq__(self, other):
+        return self.nome == other.nome and self.preco == othr.preco
         
