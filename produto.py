@@ -8,18 +8,19 @@ class Produto:
         if novo_preco > 0:
             self.preco = novo_preco
     
-    def aplicar_desconto(self,percentual,preco):
+    def aplicar_desconto(self,percentual):
         preco_descontado = self.preco*percentual/100
         preco_com_desconto = self.preco - preco_descontado
         self.preco =  preco_com_desconto
     
-    def verificar_estoque_baixo(self,estoque):
-        if self.estoque < 5:
-            return True
-        else:
-            return False
+    def verificar_estoque_baixo(self):
+        return self.estoque < 5
         
     def __str__(self):
-        return f"Produto: {self.nome} | Preco: {self.preco}"
+        if self.preco > 1:
+            return f"Produto: {self.nome} | Preco: {self.preco:.2f} Reais"
+        elif self.preco < 1:
+            return f"Produto: {self.nome} | Preco: {self.preco:.2f} centavos"
+
     def __eq__(self, other):
         return self.nome == other.nome and self.preco == other.preco

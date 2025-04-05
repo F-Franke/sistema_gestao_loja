@@ -1,9 +1,9 @@
 from cliente import Cliente
 from produto import Produto
 
-class pedido:
+class Pedido:
 
-    def __init__(self,cliente,produto,quantidade,status):
+    def __init__(self,quantidade):
         self.cliente = Cliente
         self.produto = Produto
         self.quantidade = quantidade

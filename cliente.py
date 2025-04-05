@@ -6,12 +6,12 @@ class Cliente:
 
     def adicionar_pontos(self,pontos):
         if pontos > 0:
-            self.pontos_fidelidade =+ pontos
+            self.pontos_fidelidade = self.pontos_fidelidade + pontos
     def resgatar_pontos(self,pontos):
         if pontos > 0:
-            self.pontos_fidelidade =- pontos
+            self.pontos_fidelidade = self.pontos_fidelidade - pontos
 
-    def verificar_vip(self,pontos_fidelidade):
+    def verificar_vip(self):
         return self.pontos_fidelidade >= 1000
         
     def __str__(self):
@@ -21,5 +21,5 @@ class Cliente:
         return self.email == other.email
     
     def __iadd__(self,pontos):
-        if pontos > 0:
-            self.pontos_fidelidade =+ pontos
+        self.pontos_fidelidade += pontos
+        return self
