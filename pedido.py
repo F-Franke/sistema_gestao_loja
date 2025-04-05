@@ -23,7 +23,7 @@ class Pedido:
             self.status = status_novo
         elif self.status == "entregue":
             print("Erro nao e possivel mudar o status atualmente")
-    def cancelar(self):
+    def cancelar_pedido(self):
         if self.status == "pendente":
             del self.Pedido
         else:
